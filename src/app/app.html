@@ -1,0 +1,44 @@
+<ion-menu [content]="content">
+
+  <ion-content class="sideMenu">
+    <div class="overlay">
+      <div class="logo-pic">
+        <ion-row class="img-name-row">
+          <ion-col > <img src="assets/imgs/profile.png" /> </ion-col>
+        </ion-row>
+        <hr />
+        <ion-row>
+          <ion-col text-center>
+            <p class="employee-name">User Name</p>
+          </ion-col>
+        </ion-row>
+        <hr />
+      </div>
+
+      <ion-list no-lines>
+        <button
+          menuClose
+          ion-item
+          *ngFor="let p of pages"
+          (click)="openPage(p)"
+          class="sidemenuList"
+        >
+          <ion-icon color="textlight" [name]="p.icon" item-left class="sidebarIcon"></ion-icon>
+          {{ p.title }}
+        </button>
+        <button  menuClose ion-item (click)="showConfirm()" class="doLogout">
+            <ion-icon name="md-log-out" item-left class="sidebarIcon"></ion-icon>
+        Logout
+      </button>
+
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<!--
+  Disable swipe-to-go-back because it's poor UX to combine STGB with side menus
+-->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="true"></ion-nav>
+
+
