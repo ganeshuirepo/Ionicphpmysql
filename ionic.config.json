@@ -1,0 +1,7 @@
+{
+  "name": "eCircularApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
