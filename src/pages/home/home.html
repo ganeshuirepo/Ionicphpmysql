@@ -1,0 +1,41 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+      <ion-title>
+          Welcome To APGVB
+         </ion-title>
+
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+  <ion-card class="top-card">
+    <ion-card-header><h2>Welcome to E-circulars</h2></ion-card-header>
+  </ion-card>
+
+  <ion-card class="employee-bottom-card">
+    <ion-card-content>
+        <ion-row class="logo-row">
+            <ion-col>
+              <img src="assets/imgs/logo.png"/>
+            </ion-col>
+          </ion-row>
+      <ion-row>
+        <ion-col> <p>Already Registered?</p> </ion-col>
+        <ion-col> <button ion-button small [navPush]="loginPage">LOGIN</button> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> <p>Yet to Register?</p> </ion-col>
+        <ion-col> <button ion-button small [navPush]="registerPage">REGISTER</button> </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> <p>Forgot Password?</p> </ion-col>
+        <ion-col> <button ion-button small [navPush]="forgotpswdPage">FORGOT PASSWORD</button> </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

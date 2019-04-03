@@ -1,0 +1,83 @@
+
+<ion-header>
+  <ion-toolbar>
+  <ion-navbar>
+      <ion-title> Employee Registration </ion-title>
+    </ion-navbar>
+</ion-toolbar>
+</ion-header>
+<ion-content class="login-content" padding>
+  <ion-card class="register-header-card">
+    <ion-card-header> Register Form </ion-card-header>
+    <ion-card-content> Enter registration details </ion-card-content>
+  </ion-card>
+  <div class="register-bottom-card" text-center>
+    <div class="register-inputs">
+<ion-row class="logo-row">
+
+  <ion-col>
+    <h2>Welcome to E-circulars</h2>
+  </ion-col>
+
+</ion-row>
+
+
+            <form #registerForm="ngForm" (ngSubmit)="verifyUser(registerForm)" [formGroup]="empValidation">
+          <ion-item>
+            <ion-input type="text" placeholder="Enter Employee ID" name="empid"
+            [formControl] = "empValidation.controls['empid']" required></ion-input>
+          </ion-item>
+              <div *ngIf="empValidation.controls.empid.hasError('pattern')"
+              class="validator-error">
+                Please enter a valid Employee ID.
+              </div>
+
+              <ion-item>
+                <ion-input type="text" placeholder="Enter Email" name="emailid"
+                [formControl] = "empValidation.controls['emailid']" required></ion-input>
+              </ion-item>
+                  <div *ngIf="empValidation.controls.emailid.hasError('pattern')"
+                  class="validator-error">
+                      Enter valid Mail ID.
+                    </div>
+
+            <ion-item>
+            <ion-input type="text" placeholder="Enter your Name" name="empname"
+            [formControl] = "empValidation.controls['empname']" required></ion-input>
+          </ion-item>
+              <div *ngIf="empValidation.controls.empname.hasError('')"
+              class="validator-error">
+                Please enter a valid Employee Name.
+              </div>
+              <ion-item>
+                  <ion-input type="text" placeholder="Enter Mobile No" name="empmobile"
+                  [formControl] = "empValidation.controls['empmobile']" required></ion-input>
+                </ion-item>
+                    <div *ngIf="empValidation.controls.empmobile.hasError('pattern')"
+                    class="validator-error">
+                      Please enter a valid Mobile number.
+                    </div>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Enter Branch No" name="empbranch"
+                        [formControl] = "empValidation.controls['empbranch']" required></ion-input>
+                      </ion-item>
+                          <div *ngIf="empValidation.controls.empbranch.hasError('pattern')"
+                          class="validator-error">
+                            Please enter a valid Branch number.
+                          </div>
+                          <ion-item>
+                              <ion-datetime displayFormat="MMM DD, YYYY" pickerFormat="DD-MMM-YYYY" [(ngModel)]="myDate" placeholder="Click to enter Date of Birth"
+                              name="empdob" [formControl] = "empValidation.controls['empdob']" required></ion-datetime>
+                            </ion-item>
+                                <div *ngIf="empValidation.controls.empdob.hasError('')"
+                                class="validator-error">
+                                  Please enter Date of Birth.
+                                </div>
+
+
+          <button ion-button medium type="submit" [disabled]="!registerForm.form.valid">Register</button>
+            </form>
+             </div>
+</div>
+</ion-content>
+

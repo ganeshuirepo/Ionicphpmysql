@@ -1,0 +1,89 @@
+<!--
+  Generated template for the MasterCircularPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-navbar>
+      <ion-title>Master Circulars</ion-title>
+    </ion-navbar>
+    <ion-buttons end>
+    <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+  </ion-buttons>
+</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+  <!-- <div class="pageheader">
+   <h1>Master Circulars</h1>
+  </div> -->
+  <div *ngIf = "loadData; then displayLoader; else displayData"></div>
+  <ng-template #displayLoader>
+    <div class="loader" color="headercolor">
+    <ion-spinner name="bubbles"></ion-spinner>
+    Loading Data please wait..
+  </div>
+  </ng-template>
+  <ng-template #displayData>
+  <ion-card class="top-card">
+      <ion-card-header> Master Circulars </ion-card-header>
+      <ion-card-content>  </ion-card-content>
+    </ion-card>
+
+    <ion-card class="bottom-card">
+      <ion-card-content>
+          <div *ngIf="displayCircular; then showData; else nodata"> </div>
+          <ng-template #showData>
+          <div class="weekly-table">
+              <table class="table">
+                <thead>
+                  <tr class="tb-header">
+                    <th style="width:30%">Date</th>
+                    <th style="width:30%">Name</th>
+                    <th style="width:40%">Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                  </tr>
+                </thead>
+                <tbody>
+    <tr *ngFor="let circularitem of circularmasterdata">
+      <td>{{circularitem.Circular_date}}</td>
+      <td class="col">{{circularitem.Circular_name}}</td>
+        <td>
+            <a  href="{{circularitem.upload_path}}" Content-Type="application/pdf">
+            <ion-icon  color="headercolor" ios="ios-document" md="ios-document-outline" >
+           </ion-icon></a>
+           &nbsp;
+          <span  color="headercolor">|</span>
+          &nbsp;
+          <a (click)="openPage(circularitem)">
+          <ion-icon color="headercolor" name="heart"></ion-icon>
+          </a>
+
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </ng-template>
+      <ng-template #nodata>
+        <p>No circulars to display</p>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+      <!-- <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+
+</ng-template>
+</ion-content>

@@ -1,0 +1,166 @@
+<!--
+  Generated template for the DashBoardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons end>
+      <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+    </ion-buttons>
+    <h2>Welcome to E-circulars</h2>
+  </ion-toolbar>
+  </ion-header>
+
+<ion-content padding overflow-scroll="false">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+    <div *ngIf = "loadData; then displayLoader; else displayData"></div>
+    <ng-template #displayLoader>
+      <div class="loader" color="headercolor">
+      <ion-spinner name="bubbles"></ion-spinner>
+      Loading Data please wait..
+    </div>
+    </ng-template>
+    <ng-template #displayData>
+  <ion-row>
+    <ion-col col-6 style="padding: 0px; margin: 0px">
+
+  <div class="boxhome">
+      <ion-badge item-end class="circular-badge"></ion-badge>
+  </div>
+
+  <ion-card  class="bottom-card">
+    <ion-card-content  class="card-circulars" [navPush]="todaycircularPage">
+        <ion-badge item-end class="bottom-circular-badge">{{circulardayCount}}</ion-badge>
+        <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+      <div class="bottom-circular-text"> CIRCULARS UPLOADED TODAY </div>
+    </ion-card-content>
+  </ion-card>
+  </ion-col>
+
+  <ion-col col-6 style="padding: 0px; margin: 0px">
+
+
+
+<div class="boxhome">
+    <ion-badge item-end class="circular-badge"></ion-badge>
+</div>
+
+<ion-card  class="bottom-card">
+  <ion-card-content  class="card-circulars" [navPush]="weekcircularPage">
+      <ion-badge item-end class="bottom-circular-badge">{{circularweekCount}}</ion-badge>
+      <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+    <div class="bottom-circular-text"> CURRENT WEEK CIRCULARS</div>
+  </ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-6 style="padding: 0px; margin: 0px">
+
+<div class="boxhome">
+    <ion-badge item-end class="circular-badge"></ion-badge>
+</div>
+
+<ion-card  class="bottom-card">
+  <ion-card-content  class="card-circulars" [navPush]="monthcircularPage">
+      <ion-badge item-end class="bottom-circular-badge">{{circularmonthCount}}</ion-badge>
+      <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+    <div class="bottom-circular-text"> CURRENT MONTH CIRCULARS</div>
+  </ion-card-content>
+</ion-card>
+</ion-col>
+
+  <ion-col col-6 style="padding: 0px; margin: 0px">
+
+<div class="boxhome">
+    <ion-badge item-end class="circular-badge"></ion-badge>
+</div>
+
+<ion-card  class="bottom-card">
+  <ion-card-content  class="card-circulars" [navPush]="searchcircularPage">
+      <!-- <ion-badge item-end class="bottom-circular-badge">{{}}</ion-badge>  -->
+      <br/>
+      <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+    <div class="bottom-circular-text"> OLD CIRCULAR</div>
+  </ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+<ion-row>
+  <ion-col col-6 style="padding: 0px; margin: 0px">
+
+<div class="boxhome">
+    <ion-badge item-end class="circular-badge"></ion-badge>
+</div>
+
+<ion-card  class="bottom-card">
+  <ion-card-content  class="card-circulars" [navPush]="mastercircularPage">
+      <ion-badge item-end class="bottom-circular-badge">{{circularmasterCount}}</ion-badge>
+      <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+    <div class="bottom-circular-text"> MASTER CIRCULARS</div>
+  </ion-card-content>
+</ion-card>
+</ion-col>
+
+  <ion-col col-6 style="padding: 0px; margin: 0px">
+
+<div class="boxhome">
+    <ion-badge item-end class="circular-badge"></ion-badge>
+</div>
+
+<ion-card  class="bottom-card">
+  <ion-card-content  class="card-circulars" [navPush]="lastmonthCircularPage">
+      <ion-badge item-end class="bottom-circular-badge">{{lastcircularmonthCount}}</ion-badge>
+      <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+    <div class="bottom-circular-text"> LAST MONTH CIRCULARS</div>
+  </ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+
+  <ion-row>
+    <ion-col col-6 style="padding: 0px; margin: 0px">
+
+    <div class="boxhome">
+        <ion-badge item-end class="circular-badge"></ion-badge>
+    </div>
+
+    <ion-card  class="bottom-card">
+      <ion-card-content  class="card-circulars" [navPush]="departmentSearchList">
+          <!-- <ion-badge item-end class="bottom-circular-badge">9</ion-badge>  -->
+          <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+        <div class="bottom-circular-text"> DEPARTMENT WISE CIRCULAR</div>
+      </ion-card-content>
+    </ion-card>
+    </ion-col>
+    <ion-col col-6 style="padding: 0px; margin: 0px">
+
+      <div class="boxhome">
+          <ion-badge item-end class="circular-badge"></ion-badge>
+      </div>
+
+      <ion-card  class="bottom-card">
+        <ion-card-content  class="card-circulars" [navPush]="favdetailsPage">
+            <ion-badge item-end class="bottom-circular-badge">{{circularfavdatacount}}</ion-badge>
+            <img class="bottom-circular-img" src='assets/imgs/circular-blue.png'/>
+          <div class="bottom-circular-text"> FAVOURITE CIRCULAR</div>
+        </ion-card-content>
+      </ion-card>
+      </ion-col>
+  </ion-row>
+
+</ng-template>
+</ion-content>
+

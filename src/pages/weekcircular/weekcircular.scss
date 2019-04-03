@@ -1,0 +1,50 @@
+page-weekcircular {
+  .loader {
+    background-color: #9c27b0;
+    margin-left: 15%;
+    margin-top: 40%;
+    margin-right: 15%;
+    font-size: 1.2em;
+    color: #fff;
+    ion-spinner * {
+      margin-left: 10%;
+      margin-right: 10%;
+      width: 28px;
+      height: 28px;
+      stroke:#fff;
+      fill: azure;
+    }
+  }
+  .bottom-card {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    border-radius: 6px;
+    color: #333333;
+    background: #fff;
+
+
+    box-sizing: border-box;
+
+    .card-content {
+      padding-top: 80px !important;
+    }
+    .table {
+      width: 100%;
+      th,
+      td {
+        border: 2px solid #F1EFED;
+        text-align: inherit;
+        padding: 15px;
+      }
+    }
+
+    .tb-header{
+      color: #9c27b0 ;
+    }
+
+    a {
+      font-size: 1.4em;
+    }
+  }
+}

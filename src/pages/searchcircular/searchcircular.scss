@@ -1,0 +1,119 @@
+page-searchcircular {
+
+  $color-primary: #4760d1;
+  $spacing-small: 6px;
+  $color-yellow: #FDCC27;
+  $color-green: #4fc444;
+
+  .bottom-card {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    border-radius: 6px;
+    color: #333333;
+    background: #fff;
+    // width: 100%;
+    // box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.14),
+    //   0 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 1px 5px 0 rgba(0, 0, 0, 0.12),
+    //   0px 2px 5px 1px rgba(0, 0, 0, 0.14);
+
+  // box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.1),
+  //       0 1px 1px 1px rgba(0, 0, 0, 0.1), 0px 1px 1px 0 rgba(0, 0, 0, 0.1),
+  //       0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+
+    box-sizing: border-box;
+
+    .card-content {
+      padding-top: 80px !important;
+    }
+    .table {
+      width: 100%;
+      th,
+      td {
+        border: 2px solid #F1EFED;
+        text-align: inherit;
+        padding: 15px;
+      }
+    }
+
+    .tb-header{
+      color: #9c27b0 ;
+    }
+
+    .wrapper {
+      text-align: center;
+    }
+  }
+/*
+  .pageheader {
+    width: 100%;
+    height: 50px;
+    background-color: #317ae0;
+    padding: 15px 0px 0px 0px;
+    margin-bottom: 5px;
+    color: ivory;
+    text-align: center;
+  }
+
+  .header .col {
+    background-color:#47c12e;
+  }
+
+  .col {
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #edf3fc;
+   // border: solid 1px #F1EFED;
+    border-bottom-style: groove;
+    border-right-style: none;
+    text-align: center;
+  }
+  .col:first-child {
+    max-width:28%;
+   // border-right: solid 1px #F1EFED;
+  }
+
+  .col:nth-child(2) {
+    max-width:45%;
+   // border-right: solid 1px #F1EFED;
+  }
+
+  .col:last-child {
+    max-width:27%;
+   // border-right: solid 1px #F1EFED;
+  }
+
+  .row:last-child .col {
+    border-bottom: solid 1px #F1EFED;
+  }
+
+  .pagedata {
+    margin-bottom: 5px;
+  }
+
+  .pagedata .button {
+    width: 32%;
+    height: 35px;
+    margin-right: 0px;
+    background-color: $color-primary;
+  }
+
+  .toggleStyle {
+    margin-bottom: 10px;
+  }
+  .toggleStyle .left {
+    width: 49%;
+    height: 50px;
+    background-color: $color-green;
+    margin-right: 0px;
+    .toggleStyle .left :hover {
+      background-color: $color-yellow;
+    }
+  }
+  .toggleStyle .right {
+    width: 49%;
+    height: 50px;
+    background-color: $color-green;
+  } */
+}

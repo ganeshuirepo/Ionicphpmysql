@@ -1,0 +1,74 @@
+
+    <ion-header>
+      <ion-toolbar>
+          <ion-navbar>
+          <ion-title> Change Password  </ion-title>
+          </ion-navbar>
+        <ion-buttons end>
+        <button ion-button menuToggle>
+              <ion-icon name="menu"></ion-icon>
+            </button>
+      </ion-buttons>
+    </ion-toolbar>
+    </ion-header>
+<ion-content class="login-content" padding>
+    <ion-card class="top-card">
+        <ion-card-header> Change Password </ion-card-header>
+        <ion-card-content>  </ion-card-content>
+      </ion-card>
+      <ion-card class="bottom-card">
+        <ion-card-content>
+  <!-- <ion-row><h2>Change Password</h2></ion-row> -->
+
+  <div *ngIf="isPasswordValid; then success; else incorrectdata"> </div>
+  <ng-template #success>{{passwordupdate}}</ng-template>
+  <ng-template #incorrectdata>{{passwordupdate}}</ng-template>
+
+    <ion-row>
+      <ion-col>
+        <ion-list inset>
+            <form #changePassword="ngForm" (ngSubmit)="updatePassword(changePassword)" [formGroup] = "passwordUpdation">
+              <ion-item class="login-item">
+              <ion-input type="text" placeholder="Enter Employee ID" name="empid"
+              [formControl] = "passwordUpdation.controls['empid']" required></ion-input>
+            </ion-item>
+                <div *ngIf="passwordUpdation.controls.empid.hasError('')"
+                class="validator-error">
+                  Please enter a valid Employee ID.
+                </div>
+          <ion-item>
+            <ion-input type="password" placeholder="Existing Password" name="oldpassword"
+            [formControl] = "passwordUpdation.controls['oldpassword']" required></ion-input>
+          </ion-item>
+              <div *ngIf="passwordUpdation.controls.oldpassword.hasError('pattern')"
+              class="validator-error">
+              Passwords should be at least 8 characters long and contain one number,
+              one character and one special character.
+              </div>
+
+
+          <ion-item>
+            <ion-input type="password" placeholder="New Password" name="newpassword"
+            [formControl] = "passwordUpdation.controls['newpassword']" required></ion-input>
+          </ion-item>
+              <div *ngIf="passwordUpdation.controls.newpassword.hasError('pattern')"
+              class="validator-error">
+                  Passwords should be at least 8 characters long and contain one number,
+                  one character and one special character.
+                </div>
+
+          <ion-item>
+              <div text-center>
+            <button ion-button medium type="submit"  [disabled]="!changePassword.form.valid">Submit</button>
+              </div>
+          </ion-item>
+        </form>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+  </ion-card-content>
+</ion-card>
+</ion-content>
+

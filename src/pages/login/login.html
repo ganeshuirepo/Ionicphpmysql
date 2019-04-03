@@ -1,0 +1,70 @@
+  <ion-header>
+    <ion-toolbar>
+    <ion-navbar>
+        <ion-title> Employee Login </ion-title>
+      </ion-navbar>
+      <!-- <ion-buttons end>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons> -->
+  </ion-toolbar>
+  </ion-header>
+<ion-content class="login-content" padding>
+  <ion-card class="login-header-card">
+    <ion-card-header> Login </ion-card-header>
+    <ion-card-content> Enter login credentials</ion-card-content>
+  </ion-card>
+
+  <div class="login-bottom-card" text-center>
+    <div class="login-inputs">
+  <ion-row class="logo-row">
+    <ion-col>
+      <img src="assets/imgs/logo.png"/>
+    </ion-col>
+  </ion-row>
+
+              <form #loginForm="ngForm" (ngSubmit)="verifyUser(loginForm)" [formGroup] = "loginValidation">
+            <ion-item class="login-item">
+              <ion-input type="text" placeholder="Enter Employee ID" name="empid"
+              [formControl] = "loginValidation.controls['empid']" required></ion-input>
+            </ion-item>
+                <div *ngIf="loginValidation.controls.empid.hasError('')"
+                class="validator-error">
+                  Please enter a valid Employee ID.
+                </div>
+
+
+            <ion-item class="login-item-password">
+              <ion-input type="password" placeholder="Enter Password" name="Password"
+              [formControl] = "loginValidation.controls['Password']" required></ion-input>
+            </ion-item>
+                <div *ngIf="loginValidation.controls.Password.hasError('pattern')"
+                class="validator-error">
+                    Passwords should be at least 8 characters long and contain one number,
+                    one character and one special character.
+                  </div>
+
+            <ion-item>
+                <div text-center>
+              <button ion-button medium type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+                </div>
+            </ion-item>
+          </form>
+</div>
+          <div *ngIf="isLoggedin; then loginsuccess; else nodata"> </div>
+          <!-- <ng-template #loginsuccess>
+            Hurray! You successfully logged in
+          </ng-template> -->
+          <ng-template #nodata>
+           please check your credentials, if you are not registered please click register link.
+           <ion-item>
+            <label>Yet to register:</label>
+            <button ion-button medium [navPush]="registerPage" required>Register</button>
+          </ion-item>
+        </ng-template>
+
+  </div>
+
+</ion-content>
+

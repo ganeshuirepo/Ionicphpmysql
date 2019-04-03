@@ -1,0 +1,34 @@
+page-favinsert {
+  .bottom-card {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 80px;
+    border-radius: 6px;
+    color: #333333;
+    background: #fff;
+
+    box-sizing: border-box;
+
+    .card-content {
+      padding-top: 80px !important;
+    }
+    .table {
+      width: 100%;
+      th,
+      td {
+        border: 2px solid #F1EFED;
+        text-align: inherit;
+        padding: 15px;
+       // font-size: 2.5em;
+      }
+    }
+
+    .tb-header{
+      color: #9c27b0 ;
+    }
+
+    a {
+      font-size: 1.4em;
+    }
+  }
+}
